@@ -6,7 +6,7 @@
       "description": "O tradicional café feito com água quente e grãos moídos",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional"],
+      "categories": "Tradicional",
       "image": {
         "src": "expresso-tradicional.svg"
       }
@@ -17,7 +17,7 @@
       "description": "Expresso diluído, menos intenso que o tradicional",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional"],
+      "categories": "Tradicional",
       "image": {
         "src": "expresso-americano.svg"
       }
@@ -28,7 +28,7 @@
       "description": "Café expresso tradicional com espuma cremosa",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional"],
+      "categories": "Tradicional",
       "image": {
         "src": "expresso-cremoso.svg"
       }
@@ -39,7 +39,7 @@
       "description": "Bebida preparada com café expresso e cubos de gelo",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Gelado"],
+      "categories": "Tradicional,Gelado",
       "image": {
         "src": "expresso-gelado.svg"
       }
@@ -50,7 +50,7 @@
       "description": "Meio a meio de expresso tradicional com leite vaporizado",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Com leite"],
+      "categories": "Tradicional,Com leite",
       "image": {
         "src": "cafe-leite.svg"
       }
@@ -61,7 +61,7 @@
       "description": "Uma dose de café expresso com o dobro de leite e espuma cremosa",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Com leite"],
+      "categories": "Tradicional,Com leite",
       "image": {
         "src": "latte.svg"
       }
@@ -72,7 +72,7 @@
       "description": "Bebida com canela feita de doses iguais de café, leite e espuma",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Com leite"],
+      "categories": "Tradicional,Com leite",
       "image": {
         "src": "cappuccino.svg"
       }
@@ -83,7 +83,7 @@
       "description": "Café expresso misturado com um pouco de leite quente e espuma",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Com leite"],
+      "categories": "Tradicional,Com leite",
       "image": {
         "src": "macchiato.svg"
       }
@@ -94,7 +94,7 @@
       "description": "Café expresso com calda de chocolate, pouco leite e espuma",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Com leite"],
+      "categories": "Tradicional,Com leite",
       "image": {
         "src": "mochaccino.svg"
       }
@@ -105,7 +105,7 @@
       "description": "Bebida feita com chocolate dissolvido no leite quente e café",
       "unitPrice": 9.9,
       "stockAmount": 10,
-      "categories": ["Tradicional", "Com leite"],
+      "categories": "Tradicional,Com leite",
       "image": {
         "src": "chocolate-quente.svg"
       }
@@ -116,7 +116,7 @@
       "description": "Drink gelado de café expresso com rum, creme de leite e hortelã",
       "unitPrice": 14.9,
       "stockAmount": 10,
-      "categories": ["Especial", "Alcoólico", "Gelado"],
+      "categories": "Especial,Alcoólico,Gelado",
       "image": {
         "src": "cubano.svg"
       }
@@ -127,7 +127,7 @@
       "description": "Bebida adocicada preparada com café e leite de coco",
       "unitPrice": 11.9,
       "stockAmount": 10,
-      "categories": ["Especial"],
+      "categories": "Especial",
       "image": {
         "src": "havaiano.svg"
       }
@@ -138,7 +138,7 @@
       "description": "Bebida preparada com grãos de café árabe e especiarias",
       "unitPrice": 11.9,
       "stockAmount": 10,
-      "categories": ["Especial"],
+      "categories": "Especial",
       "image": {
         "src": "arabe.svg"
       }
@@ -149,7 +149,7 @@
       "description": "Bebida a base de café, uísque irlandês, açúcar e chantilly",
       "unitPrice": 14.9,
       "stockAmount": 10,
-      "categories": ["Especial", "Alcoólico"],
+      "categories": "Especial,Alcoólico",
       "image": {
         "src": "irlandes.svg"
       }
