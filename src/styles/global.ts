@@ -8,8 +8,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${(props) => props.theme.color.black};
-    color: ${(props) => props.theme.color.primary};
+    background-color: ${(props) => props.theme.color.gray100};
+    color: ${(props) => props.theme.color.brown400};
     -webkit-font-smoothing: antialiased;
   }
 
@@ -18,13 +18,12 @@ export const GlobalStyle = createGlobalStyle`
   textarea,
   button {
     font-family: 'Roboto', sans-serif;
-    font-size: ${(props) => props.theme.text.md};
+    font-size: ${(props) => props.theme.font.text.md};
     font-weight: 400;
   }
 
   :focus,
   button:focus {
-    box-shadow: 0 0 0 2px ${(props) => props.theme.color.secondary};
     outline: transparent;
   }
   
