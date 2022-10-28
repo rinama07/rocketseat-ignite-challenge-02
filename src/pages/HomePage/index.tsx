@@ -1,5 +1,13 @@
-import { Heading } from '../../components/Heading';
+import { HeaderBanner } from './HeaderBanner';
+import { ProductSection } from './ProductSection';
+import { HomeContainer } from './styles';
 
 export function HomePage() {
-  return <Heading variant="primary">Home page content</Heading>;
+  return (
+    <HomeContainer>
+      <HeaderBanner />
+
+      <ProductSection />
+    </HomeContainer>
+  );
 }
