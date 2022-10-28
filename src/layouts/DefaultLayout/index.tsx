@@ -1,15 +1,15 @@
 import { Outlet } from 'react-router-dom';
 
-import { Header, LayoutContainer, Main } from './styles';
+import { PageHeader } from '../../components/PageHeader';
+
+import { LayoutContainer } from './styles';
 
 export function DefaultLayout() {
   return (
     <LayoutContainer>
-      <Header>Pages header</Header>
+      <PageHeader />
 
-      <Main>
-        <Outlet />
-      </Main>
+      <Outlet />
     </LayoutContainer>
   );
 }
