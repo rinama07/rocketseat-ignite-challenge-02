@@ -1,6 +1,6 @@
 import { Bank, CreditCard, MapPinLine, Money } from 'phosphor-react';
 
-import { DeliveryPayment, PaymentType } from '../../../types/payment';
+import { DeliveryPayment, PaymentType } from '../../../types/deliveryPayment';
 import { FieldsSection } from '../CheckoutFieldsContainer/styles';
 
 import { messages } from './messages';

@@ -5,9 +5,3 @@ export interface PurchaseProduct {
   unitAmount: number;
   imageSrc?: string;
 }
-
-export interface PurchaseData {
-  products: PurchaseProduct[] | null;
-  address?: DeliveryAddress;
-  payment?: DeliveryPayment;
-}

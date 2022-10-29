@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Heading } from '../../../components/Heading';
 import { getProducts } from '../../../server/getProducts';
-import { MenuProduct } from '../../../types/product';
+import { MenuProduct } from '../../../types/menuProduct';
 
 import { messages } from './messages';
 import { ProductCard } from './ProductCard';

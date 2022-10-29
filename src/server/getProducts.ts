@@ -1,5 +1,5 @@
 import { ProductData } from '../types/api/product';
-import { MenuProduct } from '../types/product';
+import { MenuProduct } from '../types/menuProduct';
 import { formatNumberToCurrency } from '../utils/number';
 
 export async function getProducts(): Promise<MenuProduct[]> {

@@ -2,7 +2,7 @@ import { MapPinLine } from 'phosphor-react';
 import { ChangeEvent } from 'react';
 
 import { TextField } from '../../../components/TextField';
-import { DeliveryAddress } from '../../../types/address';
+import { DeliveryAddress } from '../../../types/deliveryAddress';
 import { FieldsSection } from '../CheckoutFieldsContainer/styles';
 
 import { messages } from './messages';

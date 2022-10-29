@@ -1,8 +1,8 @@
 import { FormEvent, useState } from 'react';
 
 import { Heading } from '../../components/Heading';
-import { DeliveryAddress } from '../../types/address';
-import { DeliveryPayment } from '../../types/payment';
+import { DeliveryAddress } from '../../types/deliveryAddress';
+import { DeliveryPayment } from '../../types/deliveryPayment';
 
 import { CheckoutAddressFields } from './CheckoutAddressFields';
 import { CheckoutPaymentFields } from './CheckoutPaymentFields';

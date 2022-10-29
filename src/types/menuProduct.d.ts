@@ -3,6 +3,7 @@ export interface MenuProduct {
   name: string;
   description: string;
   price: string;
+  unitPrice: number;
   stockAmount: number;
   categories: string[];
   imageSrc?: string;
