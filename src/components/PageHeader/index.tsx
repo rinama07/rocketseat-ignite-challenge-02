@@ -1,7 +1,9 @@
 import { MapPin, ShoppingCart } from 'phosphor-react';
+import { useMemo } from 'react';
 import { NavLink } from 'react-router-dom';
 
 import shopLogo from '../../assets/coffee-delivery-logo.svg';
+import { usePurchaseContext } from '../../contexts/purchaseContext';
 
 import { messages } from './messages';
 import {
@@ -14,7 +16,17 @@ import {
 } from './styles';
 
 export function PageHeader() {
-  const cartProductAmount = 2;
+  const { cartProducts, deliveryAddress } = usePurchaseContext();
+
+  const cartProductAmount = useMemo(() => {
+    if (!cartProducts) {
+      return 0;
+    }
+
+    return cartProducts.reduce((acc, curr) => {
+      return acc + curr.unitAmount;
+    }, 0);
+  }, [cartProducts]);
 
   return (
     <HeaderContainer>
@@ -25,7 +37,7 @@ export function PageHeader() {
       <ButtonsContainer>
         <LocationButton title={messages.buttons.locale.title}>
           <MapPin size={22} />
-          {messages.buttons.locale.label}
+          {deliveryAddress.city},&nbsp;{deliveryAddress.state}
         </LocationButton>
 
         <CartContainer>

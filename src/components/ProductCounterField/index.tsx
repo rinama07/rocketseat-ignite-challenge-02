@@ -1,7 +1,7 @@
 import { Minus, Plus } from 'phosphor-react';
 import { ChangeEvent } from 'react';
 
-import { FieldContainer, FieldInput } from './styles';
+import { ControlButton, FieldContainer, FieldInput } from './styles';
 
 interface ProductCounterFieldProps {
   id: string;
@@ -16,6 +16,8 @@ export function ProductCounterField({
   onChangeValue,
   value,
 }: ProductCounterFieldProps) {
+  const minValue = 1;
+
   function handleChangeInput(event: ChangeEvent<HTMLInputElement>): void {
     onChangeValue(parseInt(event.target.value));
   }
@@ -27,25 +29,40 @@ export function ProductCounterField({
   }
 
   function decreateAddCartAmount(): void {
-    if (value > 0) {
+    if (value > minValue) {
       onChangeValue(value - 1);
     }
   }
 
+  const isDecrementButtonDisabled = value <= minValue;
+  const isIncrementButtonDisabled = value >= maxValue;
+
   return (
     <FieldContainer>
-      <Minus size={14} onClick={decreateAddCartAmount} />
+      <ControlButton
+        type="button"
+        onClick={decreateAddCartAmount}
+        disabled={isDecrementButtonDisabled}
+      >
+        <Minus size={14} weight="bold" />
+      </ControlButton>
 
       <FieldInput
         id={id}
         max={maxValue}
-        min={1}
+        min={minValue}
         onChange={handleChangeInput}
         type="number"
         value={value}
       />
 
-      <Plus size={14} onClick={increateAddCartAmount} />
+      <ControlButton
+        type="button"
+        onClick={increateAddCartAmount}
+        disabled={isIncrementButtonDisabled}
+      >
+        <Plus size={14} weight="bold" />
+      </ControlButton>
     </FieldContainer>
   );
 }

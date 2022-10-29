@@ -19,6 +19,16 @@ export const FieldContainer = styled.div`
   }
 `;
 
+export const ControlButton = styled.button`
+  background-color: transparent;
+  border: 0;
+  line-height: 0;
+
+  &:disabled {
+    opacity: 0.4;
+  }
+`;
+
 export const FieldInput = styled.input`
   background-color: transparent;
   border: 0;

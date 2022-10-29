@@ -3,14 +3,16 @@ import styled from 'styled-components';
 import { IconButton } from '../../../../components/Button/styles';
 
 export const Card = styled.article`
+  align-items: center;
   background-color: ${(props) => props.theme.color.gray200};
   border-radius: ${(props) =>
     `${props.theme.border.radius.md} ${props.theme.border.radius.lg}`};
+  display: flex;
+  flex-direction: column;
   height: 310px;
   margin-top: 0.5rem;
-  padding: 0 1.5rem 1.25rem;
+  padding: 0 1.5rem;
   position: relative;
-  text-align: center;
 
   & img {
     height: 7.5rem;

@@ -1,8 +1,8 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Heading } from '../../components/Heading';
-import { DeliveryAddress } from '../../types/deliveryAddress';
-import { DeliveryPayment } from '../../types/deliveryPayment';
+import { usePurchaseContext } from '../../contexts/purchaseContext';
 
 import { CheckoutAddressFields } from './CheckoutAddressFields';
 import { CheckoutPaymentFields } from './CheckoutPaymentFields';
@@ -11,33 +11,17 @@ import { messages } from './messages';
 import { CheckoutBox, CheckoutContainer } from './styles';
 
 export function CheckoutPage() {
-  const [paymentData, setDeliveryPayment] = useState<DeliveryPayment>({
-    type: null,
-  });
+  const { isDeliveryAddressFilled } = usePurchaseContext();
 
-  const [addressData, setDeliveryAddress] = useState<DeliveryAddress>({
-    zipCode: '',
-    streetName: '',
-    streetNumber: '',
-    unitNumber: undefined,
-    district: '',
-    city: '',
-    state: '',
-  });
+  const navigate = useNavigate();
 
   function handleSubmit(event: FormEvent): void {
     event.preventDefault();
 
-    console.log('Redirect to success if form submitted');
+    navigate('/success');
   }
 
-  const isPaymentVisible =
-    addressData.zipCode &&
-    addressData.streetName &&
-    addressData.streetNumber &&
-    addressData.district &&
-    addressData.city &&
-    addressData.state;
+  const isPaymentVisible = isDeliveryAddressFilled();
 
   return (
     <CheckoutContainer>
@@ -47,17 +31,9 @@ export function CheckoutPage() {
             {messages.forms.title}
           </Heading>
 
-          <CheckoutAddressFields
-            data={addressData}
-            onUpdateData={setDeliveryAddress}
-          />
+          <CheckoutAddressFields />
 
-          {isPaymentVisible && (
-            <CheckoutPaymentFields
-              data={paymentData}
-              onUpdateData={setDeliveryPayment}
-            />
-          )}
+          {isPaymentVisible && <CheckoutPaymentFields />}
         </CheckoutBox>
 
         <CheckoutBox>

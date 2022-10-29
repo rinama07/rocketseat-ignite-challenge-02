@@ -1,6 +1,7 @@
 import { Bank, CreditCard, MapPinLine, Money } from 'phosphor-react';
+import { usePurchaseContext } from '../../../contexts/purchaseContext';
 
-import { DeliveryPayment, PaymentType } from '../../../types/deliveryPayment';
+import { PaymentType } from '../../../types/deliveryPayment';
 import { FieldsSection } from '../CheckoutFieldsContainer/styles';
 
 import { messages } from './messages';
@@ -10,17 +11,11 @@ import {
   PaymentTypesContainer,
 } from './styles';
 
-interface CheckoutPaymentFieldsProps {
-  data: DeliveryPayment;
-  onUpdateData: (data: DeliveryPayment) => void;
-}
+export function CheckoutPaymentFields() {
+  const { deliveryPayment, updatePaymentData } = usePurchaseContext();
 
-export function CheckoutPaymentFields({
-  data,
-  onUpdateData,
-}: CheckoutPaymentFieldsProps) {
   function onChangePaymentField(value: PaymentType): void {
-    onUpdateData({ ...data, type: value });
+    updatePaymentData({ ...deliveryPayment, type: value });
   }
 
   return (
@@ -35,7 +30,7 @@ export function CheckoutPaymentFields({
       </FormPaymentHeader>
 
       <PaymentTypesContainer
-        value={data.type ?? ''}
+        value={deliveryPayment.type ?? ''}
         onValueChange={onChangePaymentField}
       >
         <PaymentTypeOption value="credit">

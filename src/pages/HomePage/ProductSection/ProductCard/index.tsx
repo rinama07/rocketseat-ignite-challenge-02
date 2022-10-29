@@ -3,7 +3,8 @@ import { useState } from 'react';
 
 import { Heading } from '../../../../components/Heading';
 import { ProductCounterField } from '../../../../components/ProductCounterField';
-import { MenuProduct } from '../../../../types/product';
+import { usePurchaseContext } from '../../../../contexts/purchaseContext';
+import { MenuProduct } from '../../../../types/menuProduct';
 
 import {
   AddProductToCartButton,
@@ -19,8 +20,16 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   const [cartProductQuantity, setCartProductQuantity] = useState<number>(1);
 
-  function handleClickAddProductToCart(): void {
-    console.log('add product to cart');
+  const { addProductToCart } = usePurchaseContext();
+
+  function handleAddProductToCart(): void {
+    addProductToCart({
+      id: product.id,
+      name: product.name,
+      unitAmount: cartProductQuantity,
+      unitPrice: product.unitPrice,
+      imageSrc: product.imageSrc ?? '',
+    });
   }
 
   return (
@@ -49,7 +58,7 @@ export function ProductCard({ product }: ProductCardProps) {
           value={cartProductQuantity}
         />
 
-        <AddProductToCartButton onClick={handleClickAddProductToCart}>
+        <AddProductToCartButton onClick={handleAddProductToCart}>
           <ShoppingCartSimple size={16} weight="fill" />
         </AddProductToCartButton>
       </footer>

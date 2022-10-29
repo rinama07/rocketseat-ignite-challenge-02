@@ -3,5 +3,5 @@ export interface PurchaseProduct {
   name: string;
   unitPrice: number;
   unitAmount: number;
-  imageSrc?: string;
+  imageSrc: string;
 }

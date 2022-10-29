@@ -3,6 +3,7 @@ import { CurrencyDollar, MapPin, Timer } from 'phosphor-react';
 import successIllustration from '../../assets/success-illustration.svg';
 import { Heading } from '../../components/Heading';
 import { IconCircle } from '../../components/IconCircle';
+import { usePurchaseContext } from '../../contexts/purchaseContext';
 
 import { messages } from './messages';
 import {
@@ -13,16 +14,9 @@ import {
 } from './styles';
 
 export function SuccessPage() {
-  const purchaseDataMock = {
-    address: {
-      street: '',
-      number: '102',
-      district: 'Farrapos',
-      city: 'Porto Alegre',
-      state: 'RS',
-    },
-    payment: 'Cartão de Crédito',
-  };
+  const { deliveryAddress, deliveryPayment } = usePurchaseContext();
+
+  console.log({ deliveryAddress, deliveryPayment });
 
   return (
     <SuccessContainer>
@@ -42,16 +36,16 @@ export function SuccessPage() {
                 <p>
                   {messages.purchaseInfo.address}&nbsp;
                   <b>
-                    {purchaseDataMock.address.street}
+                    {deliveryAddress.streetName}
                     ,&nbsp;
-                    {purchaseDataMock.address.number}
+                    {deliveryAddress.streetNumber}
                   </b>
                 </p>
 
                 <p>
-                  {purchaseDataMock.address.district}&nbsp;-&nbsp;
-                  {purchaseDataMock.address.city},&nbsp;
-                  {purchaseDataMock.address.state}
+                  {deliveryAddress.district}&nbsp;-&nbsp;
+                  {deliveryAddress.city},&nbsp;
+                  {deliveryAddress.state}
                 </p>
               </span>
             </div>
@@ -75,7 +69,7 @@ export function SuccessPage() {
                 <p>{messages.purchaseInfo.payment}</p>
 
                 <p>
-                  <b>{purchaseDataMock.payment}</b>
+                  <b>{deliveryPayment.type}</b>
                 </p>
               </span>
             </div>
