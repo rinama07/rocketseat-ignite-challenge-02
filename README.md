@@ -1,8 +1,8 @@
-# Coffee Shop App
+# Rocketseat Ignite - Coffee Delivery
 
 This repository was created to practice Rocketseat's Ignite course concepts and solve challenge.
 
-The application follows the design definitions from this [Figma](https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery/duplicate).
+The application follows the design definitions from this [Figma](https://www.figma.com/file/5yT9ZzZmRQRS4yivGGB3pl/Coffee-Delivery).
 
 ## Features:
 
